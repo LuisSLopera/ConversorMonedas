@@ -16,6 +16,7 @@ public class main {
             System.out.println("2. De dolar a peso Colombiano");
             System.out.println("3. De euro a peso Colombiano");
             System.out.println("4. De peso Colombiano a euro");
+            System.out.println("5. Salir");
 
             eleccionUsuario=entrada.nextInt();
 
