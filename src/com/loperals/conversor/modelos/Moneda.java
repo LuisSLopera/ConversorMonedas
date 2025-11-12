@@ -1,5 +1,7 @@
 package com.loperals.conversor.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Moneda {
     String monedaOrigen;
     String monedaDestino;
@@ -9,6 +11,12 @@ public class Moneda {
         this.monedaOrigen = monedaOrigen;
         this.monedaDestino = monedaDestino;
         this.valor = valor;
+    }
+
+    public Moneda(MonedaAPI monedaRecord) {
+        this.monedaDestino = monedaRecord.base_code();
+        this.monedaOrigen= monedaRecord.target_code();
+        this.valor=monedaRecord.conversion_rate();
     }
 
     public String getMonedaOrigen() {
