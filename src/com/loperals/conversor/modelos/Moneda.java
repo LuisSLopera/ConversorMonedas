@@ -14,8 +14,8 @@ public class Moneda {
     }
 
     public Moneda(MonedaAPI monedaRecord) {
-        this.monedaDestino = monedaRecord.base_code();
-        this.monedaOrigen= monedaRecord.target_code();
+        this.monedaOrigen = monedaRecord.base_code();
+        this.monedaDestino= monedaRecord.target_code();
         this.valor=monedaRecord.conversion_rate();
     }
 

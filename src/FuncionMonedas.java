@@ -13,7 +13,7 @@ import java.net.http.HttpResponse;
 public class FuncionMonedas {
 
 
-    public static void ConversionMonedas(String monedaDestino,String monedaOrigen,double valorConsulta, boolean estadoAplicacion) {
+    public static void ConversionMonedas(String monedaOrigen,String monedaDestino,double valorConsulta, boolean estadoAplicacion) {
         // Invocacion de libreria de gson
         Gson gson= new GsonBuilder()
                 .setPrettyPrinting()
@@ -21,9 +21,9 @@ public class FuncionMonedas {
 
         String apiKey="c09ae9ecda0fc7212727be4e";
         double resultado;
-        double total;
+        BigDecimal total;
 
-        String direccion = "https://v6.exchangerate-api.com/v6/"+apiKey+"/pair/"+monedaDestino+"/"+monedaOrigen;
+        String direccion = "https://v6.exchangerate-api.com/v6/"+apiKey+"/pair/"+monedaOrigen+"/"+monedaDestino;
 
         if (estadoAplicacion){
             try{
@@ -36,7 +36,7 @@ public class FuncionMonedas {
                 HttpResponse<String> response = client
                         .send(request, HttpResponse.BodyHandlers.ofString());
 
-                System.out.println(response.body());
+                //System.out.println(response.body());
 
 
                 //Definicion del objeto en un registro
@@ -44,9 +44,9 @@ public class FuncionMonedas {
                 //System.out.println(monedaRecord);
 
                 Moneda monedaObj=new Moneda(monedaRecord);
-                resultado=valorConsulta/monedaObj.getValor();
-                System.out.println(resultado);
-                total=Math.round(resultado*1000.000)/1000.000;
+                resultado=valorConsulta*monedaObj.getValor();
+                //System.out.println(resultado);
+                total= BigDecimal.valueOf(Math.round(resultado*1000.000)/1000.000);
                 System.out.println("El valor en " + monedaDestino +" es: "+ total);
 
 

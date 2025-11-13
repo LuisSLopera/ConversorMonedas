@@ -12,11 +12,12 @@ public class main {
             System.out.println("\n");
             System.out.println("Elige la opción que requieras:");
             System.out.println("\n");
-            System.out.println("1. De peso Colombiano a dolar");
-            System.out.println("2. De dolar a peso Colombiano");
+            System.out.println("1. De dolar a peso Colombiano");
+            System.out.println("2. De peso Colombiano a dolar");
             System.out.println("3. De euro a peso Colombiano");
             System.out.println("4. De peso Colombiano a euro");
             System.out.println("5. De libra esterlina a peso Colombiano");
+            System.out.println("6. De peso Colombiano a libra esterlina");
             System.out.println("7. Salir");
 
             eleccionUsuario=entrada.nextInt();
@@ -35,12 +36,12 @@ public class main {
                 case 3:
                     System.out.println("Digite el valor a convertir: ");
                     cantidadUsuario=entrada.nextDouble();
-                    FuncionMonedas.ConversionMonedas("COP","EUR",cantidadUsuario,estadoAplicacion);
+                    FuncionMonedas.ConversionMonedas("EUR","COP",cantidadUsuario,estadoAplicacion);
                     break;
                 case 4:
                     System.out.println("Digite el valor a convertir: ");
                     cantidadUsuario=entrada.nextDouble();
-                    FuncionMonedas.ConversionMonedas("EUR","COP",cantidadUsuario,estadoAplicacion);
+                    FuncionMonedas.ConversionMonedas("COP","EUR",cantidadUsuario,estadoAplicacion);
                     break;
 
                 case 5:
@@ -60,6 +61,10 @@ public class main {
                     estadoAplicacion=false;
                     break;
             }
+
+            System.out.println("Presiona enter para seguir.....");
+            entrada.nextLine();
+            entrada.nextLine();
 
 
 
