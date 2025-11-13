@@ -16,7 +16,8 @@ public class main {
             System.out.println("2. De dolar a peso Colombiano");
             System.out.println("3. De euro a peso Colombiano");
             System.out.println("4. De peso Colombiano a euro");
-            System.out.println("5. Salir");
+            System.out.println("5. De libra esterlina a peso Colombiano");
+            System.out.println("7. Salir");
 
             eleccionUsuario=entrada.nextInt();
 
@@ -43,6 +44,19 @@ public class main {
                     break;
 
                 case 5:
+                    System.out.println("Digite el valor a convertir: ");
+                    cantidadUsuario=entrada.nextDouble();
+                    FuncionMonedas.ConversionMonedas("GBP","COP",cantidadUsuario,estadoAplicacion);
+                    break;
+                
+                case 6:
+                    System.out.println("Digite el valor a convertir: ");
+                    cantidadUsuario=entrada.nextDouble();
+                    FuncionMonedas.ConversionMonedas("COP","GBP",cantidadUsuario,estadoAplicacion);
+                    break;
+
+
+                case 7:
                     estadoAplicacion=false;
                     break;
             }
